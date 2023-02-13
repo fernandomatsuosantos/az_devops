@@ -1,5 +1,17 @@
 #!/bin/bash
 
+backlog_item_name="$BACKLOG_ITEM_NAME"
+feature_name="$FEATURE_NAME"
+epic_name="$EPIC_NAME"
+state_done_name="$STATE_DONE_NAME"
+effort_name="$EFFORT_NAME"
+parent_id_name="$PARENT_ID_NAME"
+completed_effort_name="$COMPLETED_EFFORT_NAME"
+percentage_completed_effort_name="$PERCENTAGE_COMPLETED_EFFORT_NAME"
+time_zone="$TIME_ZONE"
+
+echo "timezone: $time_zone"
+
 # backlog_item_name="Product Backlog Item"
 # feature_name="Feature"
 # epic_name="Epic"
