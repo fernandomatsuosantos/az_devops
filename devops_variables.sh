@@ -1,6 +1,8 @@
 #!/bin/bash
 
-printenv
+az devops configure --defaults "organization=$ORGANIZATION"
+
+# Azure Library converts variables to uppercase
 
 backlog_item_name="$BACKLOG_ITEM_NAME"
 feature_name="$FEATURE_NAME"
