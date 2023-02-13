@@ -24,7 +24,7 @@
 Example: If a “Feature“ has 3 “Product Backlog Items”, 2 “Product Backlog Items” assigned to “sprint 23.1.1“ and 1 “Product Backlog Items” assigned to “sprint 23.1.2“ the respective “Feature” will receive the following values: Start Date: 1/1/2023 and End Date: 1/14/2023.
 
 ## Architecture chart
-![Architecture Chart](https://github.com/fernandomatsuosantos/fernandomatsuosantos/blob/main/az_devops/docs/img/architecture-chart.png?raw=true)
+![Architecture Chart](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/architecture-chart.png?raw=true)
 
 ## How it works
 
