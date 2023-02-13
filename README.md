@@ -52,16 +52,33 @@ To configure the process will be necessary “Administrative Access” to Azure 
 ### Configuration
 
 1.  Create the Interactions on Azure Devops based on the standards (Project Settings - Project Configuration)
+
+![Step 1](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/1.png?raw=true)
+
 2.  Customize the Azure Board adding the fields “Percentage Completed Effort” and “Completed Effort” on “features” and also a field called “ParentId” on “Product Backlog Item”;
+
+![Step 2](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/2.png?raw=true)
+
 3.  Store files on Azure repos and make personalizations on bash code based on client’s board configuration (if necessary) - add custom names on devops_variables.sh;
 4.  Create the pipelines using the yml files stored on Git (existing YAML pipeline file) and set the secret “AZURE_DEVOPS_EXT_PAT” on pipeline;
+
+![Step 4](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/4.png?raw=true)
+
 5.  Make sure you have ubuntu-latest agents available to run the pipeline;
     - Generate a Personal Access Token to be used by the agent  
     - If you are using self-hosted agent follow the instructions on Azure DevOps  
     - Make sure you have “az client” and “az board” installed on agent machine  
 
+![Step 5](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/5.png?raw=true)
+
 6.  Create the Service Connections;
+
+![Step 6](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/6.png?raw=true)
+
 7.  Create the Service Hooks;
+
+![Step 7](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/7.png?raw=true)
+
 8.  Test the pipelines and webhook to make sure it’s working properly;
 9.  If the client has different fields the source code stored at Git must be personalized.
 
