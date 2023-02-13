@@ -6,6 +6,9 @@ resources:
 pool:
   name: "Azure Pipelines"
 
+variables:
+- group: "devops_boards"
+
 steps:
 
 - task: Bash@3
