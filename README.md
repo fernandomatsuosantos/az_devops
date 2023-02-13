@@ -74,12 +74,12 @@ To configure the process will be necessary “Administrative Access” to Azure 
 
 [Modus Create](https://moduscreate.com) is a digital product consultancy. We use a distributed team of the best talent in the world to offer a full suite of digital product design-build services; ranging from consumer facing apps, to digital migration, to agile development training, and business transformation.
 
-<a href="https://moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_Terraform_PoC"><img src="https://res.cloudinary.com/modus-labs/image/upload/h_80/v1533109874/modus/logo-long-black.svg" height="80" alt="Modus Create"/></a>
+<a href="https://moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_DevOps"><img src="https://res.cloudinary.com/modus-labs/image/upload/h_80/v1533109874/modus/logo-long-black.svg" height="80" alt="Modus Create"/></a>
 <br />
 
-This project is part of [Modus Labs](https://labs.moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_Terraform_PoC).
+This project is part of [Modus Labs](https://labs.moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_DevOps).
 
-<a href="https://labs.moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_Terraform_PoC"><img src="https://res.cloudinary.com/modus-labs/image/upload/h_80/v1531492623/labs/logo-black.svg" height="80" alt="Modus Labs"/></a>
+<a href="https://labs.moduscreate.com/?utm_source=labs&utm_medium=github&utm_campaign=Azure_DevOps"><img src="https://res.cloudinary.com/modus-labs/image/upload/h_80/v1531492623/labs/logo-black.svg" height="80" alt="Modus Labs"/></a>
 
 ## Licensing
 
