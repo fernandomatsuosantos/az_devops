@@ -1,10 +1,5 @@
 #!/bin/bash
 
-echo '$(bash_variables)' > bash_variables.sh
-cat bash_variables.sh
-chmod +x bash_variables.sh
-./bash_variables.sh
-
 # backlog_item_name="Product Backlog Item"
 # feature_name="Feature"
 # epic_name="Epic"
