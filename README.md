@@ -59,7 +59,10 @@ To configure the process will be necessary “Administrative Access” to Azure 
 
 ![Step 2](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/2.png?raw=true)
 
-3.  Store files on Azure repos and make personalizations on bash code based on client’s board configuration (if necessary) - add custom names on devops_variables.sh;
+3.  Create a library called devops_boards and make variable customizations based on client’s board configuration (you can also check devops_variables.sh);
+
+![Step 3](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/3.png?raw=true)
+
 4.  Create the pipelines using the yml files stored on Git (existing YAML pipeline file) and set the secret “AZURE_DEVOPS_EXT_PAT” on pipeline;
 
 ![Step 4](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/4.png?raw=true)
@@ -75,7 +78,7 @@ To configure the process will be necessary “Administrative Access” to Azure 
 
 ![Step 6](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/6.png?raw=true)
 
-7.  Create the Service Hooks;
+7.  Create the Service Hooks - You can use create_hook.txt as a template (Azure Devops won't accept creating multiple webhooks, so create one by one);
 
 ![Step 7](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/7.png?raw=true)
 
