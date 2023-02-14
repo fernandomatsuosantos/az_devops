@@ -74,7 +74,11 @@ To configure the process will be necessary “Administrative Access” to Azure 
 
 ![Step 5](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/5.png?raw=true)
 
-6.  Create the Service Connections;
+6.  Create the all Service Connections;
+
+- incoming_webhook_connection_trigger_date
+- incoming_webhook_connection_trigger_devops
+- incoming_webhook_connection_trigger_effort
 
 ![Step 6](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/6.png?raw=true)
 
