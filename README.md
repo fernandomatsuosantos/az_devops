@@ -86,8 +86,7 @@ To configure the process will be necessary “Administrative Access” to Azure 
 
 ![Step 7](https://github.com/fernandomatsuosantos/az_devops/blob/main/docs/img/7.png?raw=true)
 
-8.  Test the pipelines and webhook to make sure it’s working properly;
-9.  If the client has different fields the source code stored at Git must be personalized.
+8.  Test the pipelines and webhook to make sure it’s working properly
 
 ## Important notes
 - The process can run on “Azure Agents” or “Self-Hosted Agents” based on clients' needs. If the client runs software development pipelines on Azure DevOps we can create and use a small ubuntu Self-Hosted Agent machine to run the pipeline avoiding concurrency with development teams pipelines;
