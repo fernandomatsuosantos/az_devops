@@ -12,7 +12,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
     }
 },
 {
@@ -29,7 +29,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
     }
 },
 {
@@ -46,7 +46,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -63,7 +63,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
     }
 },
 {
@@ -80,7 +80,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -97,7 +97,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
     }
 },
 {
@@ -115,7 +115,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
     }
 },
 {
@@ -133,7 +133,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -151,7 +151,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
     }
 },
 {
@@ -169,7 +169,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -187,7 +187,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_date?api-version=6.0-preview"
     }
 },
 {
@@ -205,7 +205,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -223,7 +223,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 },
 {
@@ -241,7 +241,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
     }
 },
 {
@@ -259,7 +259,7 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_effort?api-version=6.0-preview"
     }
 },
 {
@@ -277,6 +277,6 @@
     "consumerInputs": {
         "detailedMessagesToSend": "text",
         "messagesToSend": "text",
-        "url": "https://dev.azure.com/fernandomatsuosantos/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
+        "url": "https://dev.azure.com/_organization_name_/_apis/public/distributedtask/webhooks/incoming_webhook_connection_trigger_devops?api-version=6.0-preview"
     }
 }]
