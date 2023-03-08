@@ -5,9 +5,10 @@ echo "*** Create Webhooks"
 
 read -p 'PAT:' pat
 
-organization_name="fernandomatsuosantos"
-project_name="DevOps PoC"
-area_path="DevOps PoC"
+# Please replace the variables before running
+organization_name="organization_name"
+project_name="project_name"
+area_path="area_path"
 
 # Get Project ID
 url="https://dev.azure.com/$organization_name/_apis/projects/$project_name?api-version=7.0"

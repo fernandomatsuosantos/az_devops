@@ -9,6 +9,7 @@ echo "Refresh All"
 
 source devops_variables.sh
 
+# Please replace the variable before running
 project_name='project_name'
 echo "${project_name}"
 
