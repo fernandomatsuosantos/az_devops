@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -o xtrace
 
 source devops_variables.sh
 
@@ -52,8 +51,6 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     echo "new_start_date: ${backlog_min_start_date} / new_finish_date: ${backlog_max_finish_date}"
 
 done
-
-
 
 # Update features values
 feature_update=$(az boards work-item update --id ${feature_id} --fields "Start Date=${backlog_min_start_date}" "Target Date=${backlog_max_finish_date}")

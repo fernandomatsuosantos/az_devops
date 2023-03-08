@@ -1,5 +1,4 @@
 #!/bin/bash
-# set -o xtrace
 
 # --------------------------------------------------------
 # CAUTION!
@@ -35,8 +34,6 @@ for row_backlog_items in $(echo "${backlog_items}" | jq -r '.[] | @base64'); do
 done
 echo "backlog_items_updated: ${count}"
 
-
-
 # Update "Custom.'${parent_id_name}'" field for all "Feature"
 backlog_items=$(az boards query --wiql "SELECT id, System.Parent, Custom.${parent_id_name} FROM workitems where [System.TeamProject] = '${project_name}' and [System.WorkItemType] = '${feature_name}'")
 
@@ -55,8 +52,6 @@ for row_backlog_items in $(echo "${backlog_items}" | jq -r '.[] | @base64'); do
     fi
 done
 echo "features_updated: ${count}"
-
-
 
 # Update TotalEffort, CompletedEffort, PercentageCompletedEffort, StartDate, TargetDate fields for all "Features"
 features=$(az boards query --wiql "SELECT id, System.TeamProject FROM workitems where [System.TeamProject] = '${project_name}' and [System.WorkItemType] = '${feature_name}'")
@@ -79,8 +74,6 @@ for row_features in $(echo "${features}" | jq -r '.[] | @base64'); do
 done
 echo "Features updated: ${count}"
 
-
-
 # Update TotalEffort, CompletedEffort, PercentageCompletedEffort, StartDate, TargetDate fields for all "Epics"
 epics=$(az boards query --wiql "SELECT id, System.TeamProject FROM workitems where [System.TeamProject] = '${project_name}' and [System.WorkItemType] = '${epic_name}'")
 
@@ -98,4 +91,3 @@ for row_epics in $(echo "${epics}" | jq -r '.[] | @base64'); do
     count=$(($count + 1))
 done
 echo "Epics updated: ${count}"
-

@@ -6,7 +6,6 @@ source devops_variables.sh
 echo "*** Get ParentId"
 
 JsonPost=$(cat JsonPost.json)
-# echo "${JsonPost}"
 
 eventType=$(echo "${JsonPost}" | jq '.eventType')
 if [[ ${eventType} = '"workitem.updated"' ]]; then
