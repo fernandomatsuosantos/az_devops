@@ -7,18 +7,6 @@ if [[ "$states_enabled" != "1" ]]; then
     exit
 fi
 
-# for testing
-echo $states_not_started
-echo $states_not_started_set_status
-echo $states_in_development
-echo $states_in_development_set_status
-echo $states_resolved
-echo $states_resolved_set_status
-echo $states_closed
-echo $states_closed_set_status
-echo $states_blocked
-echo $states_blocked_set_status
-
 echo "feature_id: ${feature_id}"
 echo "project_name: ${project_name}"
 
