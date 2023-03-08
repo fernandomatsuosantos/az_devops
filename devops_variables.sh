@@ -14,6 +14,8 @@ completed_effort_name="$COMPLETED_EFFORT_NAME"
 percentage_completed_effort_name="$PERCENTAGE_COMPLETED_EFFORT_NAME"
 time_zone="$TIME_ZONE"
 
+echo $STATES
+
 states_enabled="$STATES_ENABLED"
 states="$STATES"
 states_not_started=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_not_started')
