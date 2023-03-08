@@ -9,10 +9,8 @@ source devops_variables.sh
 
 echo "Refresh All"
 
-project_name='Modus Aha Integration Sandbox'
+project_name='project_name'
 echo "${project_name}"
-
-
 
 # Update "Custom.'${parent_id_name}'" field for all "Product Backlog Item"
 backlog_items=$(az boards query --wiql "SELECT id, System.Parent, Custom.${parent_id_name} FROM workitems where [System.TeamProject] = '${project_name}' and [System.WorkItemType] = '${backlog_item_name}'")
