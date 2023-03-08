@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source devops_variables.sh
-
 echo "*** Date Update Feature"
+
+source devops_variables.sh
 
 # Get parameters
 feature_id=$1

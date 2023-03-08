@@ -5,9 +5,9 @@
 # Before running disable all webhooks "update feature"
 # --------------------------------------------------------
 
-source devops_variables.sh
-
 echo "Refresh All"
+
+source devops_variables.sh
 
 project_name='project_name'
 echo "${project_name}"

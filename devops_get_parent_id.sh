@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source devops_variables.sh
-
 echo "*** Get ParentId"
+
+source devops_variables.sh
 
 JsonPost=$(cat JsonPost.json)
 

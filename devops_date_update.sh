@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source devops_get_parent_id.sh
-
 echo "*** Date Update"
+
+source devops_get_parent_id.sh
 
 chmod +x devops_date_update_feature.sh
 ./devops_date_update_feature.sh "${ParentId}" "${project_name}"

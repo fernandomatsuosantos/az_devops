@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source devops_variables.sh
-
 echo "*** Effort Update Epic"
+
+source devops_variables.sh
 
 # Get parameters
 epic_id=$1
