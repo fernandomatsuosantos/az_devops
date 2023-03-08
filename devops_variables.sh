@@ -14,35 +14,8 @@ completed_effort_name="$COMPLETED_EFFORT_NAME"
 percentage_completed_effort_name="$PERCENTAGE_COMPLETED_EFFORT_NAME"
 time_zone="$TIME_ZONE"
 
-echo $STATES
-echo $project_name
-
 states_enabled="$STATES_ENABLED"
 states="$STATES"
-echo $states
-states_not_started=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_not_started')
-states_not_started_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_not_started_set_status')
-states_in_development=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_in_development')
-states_in_development_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_in_development_set_status')
-states_resolved=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_resolved')
-states_resolved_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_resolved_set_status')
-states_closed=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_closed')
-states_closed_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_closed_set_status')
-states_blocked=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_blocked')
-states_blocked_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_blocked_set_status')
-
-# for testing
-echo $states_not_started
-echo $states_not_started_set_status
-echo $states_in_development
-echo $states_in_development_set_status
-echo $states_resolved
-echo $states_resolved_set_status
-echo $states_closed
-echo $states_closed_set_status
-echo $states_blocked
-echo $states_blocked_set_status
-
 
 # Variables example
 
