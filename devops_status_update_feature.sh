@@ -40,11 +40,6 @@ states_4_one_set_status=$(echo $states | jq --arg project_name "$project_name" -
 states_5_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one')
 states_5_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one_set_status')
 
-echo $states_1_one
-echo $states_1_one_set_status
-echo $states_2_one
-echo $states_2_one_set_status
-
 # Get all backlog itens
 state=""
 state_all_same=1
@@ -86,6 +81,8 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
 
     echo "Story_ID:  ${backlog_id} - STATE: ${backlog_system_state}"
 done
+
+echo state_final_id
 
 if [[ ${state_final_id} == 1 ]]; then
     state_final="${states_1_one_set_status}"
