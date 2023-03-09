@@ -71,6 +71,7 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         state_all_same=0
     fi
 
+    # Set state_final_id to have a priority
     if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " && ${state_final} < 5 ]]; then
         state_final_id=5
     elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " && ${state_final} < 4 ]]; then
