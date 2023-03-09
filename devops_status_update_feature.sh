@@ -109,8 +109,6 @@ if [[ ${state_all_same} == 1 && ${state_final} == "" ]]; then
         state_final="${states_8_set_status}"
     elif [[ " ${states_9[*]} " =~ " $state " ]]; then
         state_final="${states_9_set_status}"      
-    else
-        state_final=""
     fi
 fi
 
