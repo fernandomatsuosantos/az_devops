@@ -70,19 +70,19 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         state_all_same=0
     fi
 
-    if [[ " ${states_1_one[*]} " =~ " $state " ]]; then
+    if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " ]]; then
         state_final="${states_1_one_set_status}"
         break
-    elif [[ " ${states_2_one[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " ]]; then
         state_final="${states_2_one_set_status}"
         break
-    elif [[ " ${states_3_one[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_3_one[*]} " =~ " $backlog_system_state " ]]; then
         state_final="${states_3_one_set_status}"
         break
-    elif [[ " ${states_4_one[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_4_one[*]} " =~ " $backlog_system_state " ]]; then
         state_final="${states_4_one_set_status}"
         break
-    elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_5_one[*]} " =~ " $backlog_system_state " ]]; then
         state_final="${states_5_one_set_status}"
         break
     fi
