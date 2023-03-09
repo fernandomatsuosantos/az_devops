@@ -68,15 +68,15 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
 
     # Set state_final_id to have a priority
     if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " && ${state_final} < 5 ]]; then
-        state_final_id=5
+        state_final_id = 5
     elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " && ${state_final} < 4 ]]; then
-        state_final_id=4
+        state_final_id = 4
     elif [[ " ${states_3_one[*]} " =~ " $backlog_system_state " && ${state_final} < 3 ]]; then
-        state_final_id=3
+        state_final_id = 3
     elif [[ " ${states_4_one[*]} " =~ " $backlog_system_state " && ${state_final} < 2 ]]; then
-        state_final_id=2
+        state_final_id = 2
     elif [[ " ${states_5_one[*]} " =~ " $backlog_system_state " && ${state_final} < 1 ]]; then
-        state_final_id=1
+        state_final_id = 1
     fi
 
     echo "Story_ID:  ${backlog_id} - STATE: ${backlog_system_state}"
@@ -84,15 +84,15 @@ done
 
 echo $state_final_id
 
-if [[ ${state_final_id} == 1 ]]; then
+if [[ ${state_final_id} == "1" ]]; then
     state_final="${states_1_one_set_status}"
-elif [[ ${state_final_id} == 2 ]]; then
+elif [[ ${state_final_id} == "2" ]]; then
     state_final="${states_2_one_set_status}"
-elif [[ ${state_final_id} == 3 ]]; then
+elif [[ ${state_final_id} == "3" ]]; then
     state_final="${states_3_one_set_status}"
-elif [[ ${state_final_id} == 4 ]]; then
+elif [[ ${state_final_id} == "4" ]]; then
     state_final="${states_4_one_set_status}"
-elif [[ ${state_final_id} == 5 ]]; then
+elif [[ ${state_final_id} == "5" ]]; then
     state_final="${states_5_one_set_status}"
 fi
 
