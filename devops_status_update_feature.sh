@@ -40,10 +40,10 @@ states_4_one_set_status=$(echo $states | jq --arg project_name "$project_name" -
 states_5_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one')
 states_5_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one_set_status')
 
-echo states_1_one
-echo states_1_one_set_status
-echo states_2_one
-echo states_2_one_set_status
+echo $states_1_one
+echo $states_1_one_set_status
+echo $states_2_one
+echo $states_2_one_set_status
 
 # Get all backlog itens
 state=""
