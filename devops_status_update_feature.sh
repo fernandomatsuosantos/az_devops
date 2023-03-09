@@ -65,6 +65,23 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         state_all_same=0
     fi
 
+    if [[ " ${states_1_one[*]} " =~ " $state " ]]; then
+        state_final="${states_1_one_set_status}"
+        break
+    elif [[ " ${states_2_one[*]} " =~ " $state " ]]; then
+        state_final="${states_2_one_set_status}"
+        break
+    elif [[ " ${states_3_one[*]} " =~ " $state " ]]; then
+        state_final="${states_3_one_set_status}"
+        break
+    elif [[ " ${states_4_one[*]} " =~ " $state " ]]; then
+        state_final="${states_4_one_set_status}"
+        break
+    elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
+        state_final="${states_5_one_set_status}"
+        break
+    fi
+
     echo "Story_ID:  ${backlog_id} - STATE: ${backlog_system_state}"
 done
 
@@ -87,20 +104,6 @@ if [[ $state_all_same == 1 ]]; then
         state_final="${states_8_set_status}"
     elif [[ " ${states_9[*]} " =~ " $state " ]]; then
         state_final="${states_9_set_status}"      
-    else
-        state_final=""
-    fi
-else
-    if [[ " ${states_1_one[*]} " =~ " $state " ]]; then
-        state_final="${states_1_one_set_status}"
-    elif [[ " ${states_2_one[*]} " =~ " $state " ]]; then
-        state_final="${states_2_one_set_status}"
-    elif [[ " ${states_3_one[*]} " =~ " $state " ]]; then
-        state_final="${states_3_one_set_status}"
-    elif [[ " ${states_4_one[*]} " =~ " $state " ]]; then
-        state_final="${states_4_one_set_status}"
-    elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
-        state_final="${states_5_one_set_status}"
     else
         state_final=""
     fi
