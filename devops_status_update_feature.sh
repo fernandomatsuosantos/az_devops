@@ -50,6 +50,7 @@ state=""
 state_all_same=1
 state_final=""
 at_least_one_blocked=0
+state_final_id=0
 
 backlogs=$(az boards query --wiql "SELECT id, System.State FROM workitems where [System.TeamProject] = '${project_name}' and [System.Parent] = '${feature_id}' and [System.WorkItemType] = '${backlog_item_name}'")
 
@@ -70,25 +71,32 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         state_all_same=0
     fi
 
-    if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " ]]; then
-        state_final="${states_1_one_set_status}"
-        break
-    elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " ]]; then
-        state_final="${states_2_one_set_status}"
-        break
-    elif [[ " ${states_3_one[*]} " =~ " $backlog_system_state " ]]; then
-        state_final="${states_3_one_set_status}"
-        break
-    elif [[ " ${states_4_one[*]} " =~ " $backlog_system_state " ]]; then
-        state_final="${states_4_one_set_status}"
-        break
-    elif [[ " ${states_5_one[*]} " =~ " $backlog_system_state " ]]; then
-        state_final="${states_5_one_set_status}"
-        break
+    if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " && ${state_final} < 5 ]]; then
+        state_final_id=5
+    elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " && ${state_final} < 4 ]]; then
+        state_final_id=4
+    elif [[ " ${states_3_one[*]} " =~ " $backlog_system_state " && ${state_final} < 3 ]]; then
+        state_final_id=3
+    elif [[ " ${states_4_one[*]} " =~ " $backlog_system_state " && ${state_final} < 2 ]]; then
+        state_final_id=2
+    elif [[ " ${states_5_one[*]} " =~ " $backlog_system_state " && ${state_final} < 1 ]]; then
+        state_final_id=1
     fi
 
     echo "Story_ID:  ${backlog_id} - STATE: ${backlog_system_state}"
 done
+
+if [[ ${state_final_id} == 1 ]]; then
+    state_final="${states_1_one_set_status}"
+elif [[ ${state_final_id} == 2 ]]; then
+    state_final="${states_2_one_set_status}"
+elif [[ ${state_final_id} == 3 ]]; then
+    state_final="${states_3_one_set_status}"
+elif [[ ${state_final_id} == 4 ]]; then
+    state_final="${states_4_one_set_status}"
+elif [[ ${state_final_id} == 5 ]]; then
+    state_final="${states_5_one_set_status}"
+fi
 
 if [[ ${state_all_same} == 1 && ${state_final} == "" ]]; then
     if [[ " ${states_1[*]} " =~ " $state " ]]; then
