@@ -29,15 +29,15 @@ states_8_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.
 states_9=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_9')
 states_9_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_9_set_status')
 
-states_1_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1')
+states_1_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_one')
 states_1_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_one_set_status')
-states_2_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2')
+states_2_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_one')
 states_2_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_one_set_status')
-states_3_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3')
+states_3_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_one')
 states_3_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_one_set_status')
-states_4_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4')
+states_4_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_one')
 states_4_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_one_set_status')
-states_5_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5')
+states_5_one=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one')
 states_5_one_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_one_set_status')
 
 # Get all backlog itens
