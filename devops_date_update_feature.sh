@@ -22,9 +22,9 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     echo "Iteration_path: ${backlog_iteration_path}"
 
     # check if it's a sprint (3rd. level iteration)
-    res="${backlog_iteration_path//[^\\]}"
-    echo "Iteration_path_level: ${res}"
-    if [[ ${#res} < 4 ]]; then
+    count=$(grep -o '\\' <<<"$backlog_iteration_path" | grep -c .)
+    echo "Iteration_path_level: ${count}"
+    if [[ ${count} < 4 ]]; then
         continue
     fi
 
