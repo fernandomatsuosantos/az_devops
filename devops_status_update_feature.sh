@@ -76,15 +76,15 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     fi
 
     # Set group_final_id
-    if [[ " ${states_1_all[*]} " =~ " $backlog_system_state " ]]; then
+    if [[ " ${states_1_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_1=$((${group_final_1} + 1))
-    elif [[ " ${states_2_all[*]} " =~ " $backlog_system_state " ]]; then
+    elif [[ " ${states_2_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_2=$((${group_final_2} + 1))
-    elif [[ " ${states_3_all[*]} " =~ " $backlog_system_state " ]]; then
+    elif [[ " ${states_3_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_3=$((${group_final_3} + 1))
-    elif [[ " ${states_4_all[*]} " =~ " $backlog_system_state " ]]; then
+    elif [[ " ${states_4_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_4=$((${group_final_4} + 1))
-    elif [[ " ${states_5_all[*]} " =~ " $backlog_system_state " ]]; then
+    elif [[ " ${states_5_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_5=$((${group_final_5} + 1))
     fi
 
@@ -138,16 +138,16 @@ if [[ ${state_final} == "" ]]; then
 fi
 
 if [[ ${state_final} == "" ]]; then
-    if [[ ${state_final_id} == 1 ]]; then
-        state_final="${states_5_one_set_status}"
-    elif [[ ${state_final_id} == 2 ]]; then
-        state_final="${states_4_one_set_status}"
-    elif [[ ${state_final_id} == 3 ]]; then
-        state_final="${states_3_one_set_status}"
-    elif [[ ${state_final_id} == 4 ]]; then
-        state_final="${states_2_one_set_status}"
-    elif [[ ${state_final_id} == 5 ]]; then
-        state_final="${states_1_one_set_status}"
+    if [[ " ${states_1_all[*]} " =~ " $state " ]]; then
+        state_final="${states_1_all_set_status}"
+    elif [[ " ${states_2_all[*]} " =~ " $state " ]]; then
+        state_final="${states_2_all_set_status}"
+    elif [[ " ${states_3_all[*]} " =~ " $state " ]]; then
+        state_final="${states_3_all_set_status}"
+    elif [[ " ${states_4_all[*]} " =~ " $state " ]]; then
+        state_final="${states_4_all_set_status}"
+    elif [[ " ${states_5_all[*]} " =~ " $state " ]]; then
+        state_final="${states_5_all_set_status}"   
     fi
 fi
 
