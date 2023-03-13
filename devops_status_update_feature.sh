@@ -47,7 +47,6 @@ states_5_one_set_status=$(echo $states | jq --arg project_name "$project_name" -
 state=""
 state_all_same=1
 state_final=""
-at_least_one_blocked=0
 state_final_id=0
 total_work_item=0
 group_final_1=0
@@ -65,17 +64,16 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     backlog_id=$(_jq '.id')
     backlog_system_state=$(_jq '.fields."System.State"')
 
-    # if [[ -z $state ]]; then
-        state=$backlog_system_state
-    # fi
+    state=$backlog_system_state
 
+    # check if all work items have the same status
     if [[ "$backlog_system_state" == "$state" ]]; then
         state=$backlog_system_state
     else
         state_all_same=0
     fi
 
-    # Set group_final_id
+    # Group status (AND)
     if [[ " ${states_1_or[*]} " =~ " $backlog_system_state " ]]; then
         group_final_1=$((${group_final_1} + 1))
     elif [[ " ${states_2_or[*]} " =~ " $backlog_system_state " ]]; then
@@ -88,7 +86,7 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         group_final_5=$((${group_final_5} + 1))
     fi
 
-    # Set state_final_id to have a priority
+    # Set status (ANY)
     if [[ " ${states_1_one[*]} " =~ " $backlog_system_state " && ${state_final_id} < 5 ]]; then
         state_final_id=5
     elif [[ " ${states_2_one[*]} " =~ " $backlog_system_state " && ${state_final_id} < 4 ]]; then
