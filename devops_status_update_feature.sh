@@ -108,15 +108,15 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
 done
 
 if [[ ${state_all_same} == 1 ]]; then
-    if [[ " ${states_1[*]} " =~ " $state " ]]; then
+    if [[ " ${states_1_all[*]} " =~ " $state " ]]; then
         state_final="${states_1_all_set_status}"
-    elif [[ " ${states_2[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_2_all[*]} " =~ " $state " ]]; then
         state_final="${states_2_all_set_status}"
-    elif [[ " ${states_3[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_3_all[*]} " =~ " $state " ]]; then
         state_final="${states_3_all_set_status}"
-    elif [[ " ${states_4[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_4_all[*]} " =~ " $state " ]]; then
         state_final="${states_4_all_set_status}"
-    elif [[ " ${states_5[*]} " =~ " $state " ]]; then
+    elif [[ " ${states_5_all[*]} " =~ " $state " ]]; then
         state_final="${states_5_all_set_status}"  
     fi
     echo "all the same"
