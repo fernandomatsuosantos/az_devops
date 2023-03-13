@@ -49,8 +49,12 @@ state_all_same=1
 state_final=""
 at_least_one_blocked=0
 state_final_id=0
-group_final_id=0
 total_work_item=0
+group_final_1=0
+group_final_2=0
+group_final_3=0
+group_final_4=0
+group_final_5=0
 
 backlogs=$(az boards query --wiql "SELECT id, System.State FROM workitems where [System.TeamProject] = '${project_name}' and [System.Parent] = '${feature_id}' and [System.WorkItemType] = '${backlog_item_name}'")
 
