@@ -10,16 +10,16 @@ fi
 echo "feature_id: ${feature_id}"
 echo "project_name: ${project_name}"
 
-# states_1_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_all')
-# states_1_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_all_set_status')
-# states_2_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_all')
-# states_2_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_all_set_status')
-# states_3_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_all')
-# states_3_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_all_set_status')
-# states_4_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_all')
-# states_4_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_all_set_status')
-# states_5_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_all')
-# states_5_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_all_set_status')
+states_1_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_all')
+states_1_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_all_set_status')
+states_2_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_all')
+states_2_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_2_all_set_status')
+states_3_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_all')
+states_3_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_3_all_set_status')
+states_4_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_all')
+states_4_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_4_all_set_status')
+states_5_all=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_all')
+states_5_all_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_5_all_set_status')
 
 states_1_or=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_or')
 states_1_or_set_status=$(echo $states | jq --arg project_name "$project_name" -r '.[] | select(.project==$project_name) | .states_1_or_set_status')
