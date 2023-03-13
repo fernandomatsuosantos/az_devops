@@ -64,7 +64,9 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     backlog_id=$(_jq '.id')
     backlog_system_state=$(_jq '.fields."System.State"')
 
-    state=$backlog_system_state
+    if [[ -z $state ]]; then
+        state=$backlog_system_state
+    fi
 
     # check if all work items have the same status
     if [[ "$backlog_system_state" == "$state" ]]; then
