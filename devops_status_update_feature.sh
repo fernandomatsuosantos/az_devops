@@ -105,8 +105,6 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
 
     echo "story_id:  ${backlog_id} - state: ${backlog_system_state}"
     echo "total_work_item:  ${total_work_item}"
-    echo "state_final_id:  ${state_final_id}"
-    echo "group_final_1:  ${group_final_1}"
 done
 
 if [[ ${state_all_same} == 1 ]]; then
