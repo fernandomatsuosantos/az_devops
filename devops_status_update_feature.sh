@@ -101,7 +101,7 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         state_final_id=1
     fi
 
-    total_work_item=$total_work_item+1
+    total_work_item=$((${total_work_item} + 1))
 
     echo "story_id:  ${backlog_id} - state: ${backlog_system_state}"
     echo "total_work_item:  ${total_work_item}"
