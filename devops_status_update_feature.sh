@@ -77,15 +77,15 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
 
     # Set group_final_id
     if [[ " ${states_1_all[*]} " =~ " $backlog_system_state " ]]; then
-        group_final_1=$group_final_1+1
+        group_final_1=$(( $group_final_1 + 1 ))
     elif [[ " ${states_2_all[*]} " =~ " $backlog_system_state " ]]; then
-        group_final_2=$group_final_2+1
+        group_final_2=$(( $group_final_2 + 1 ))
     elif [[ " ${states_3_all[*]} " =~ " $backlog_system_state " ]]; then
-        group_final_3=$group_final_3+1
+        group_final_3=$(( $group_final_3 + 1 ))
     elif [[ " ${states_4_all[*]} " =~ " $backlog_system_state " ]]; then
-        group_final_4=$group_final_4+1
+        group_final_4=$(( $group_final_4 + 1 ))
     elif [[ " ${states_5_all[*]} " =~ " $backlog_system_state " ]]; then
-        group_final_5=$group_final_5+1
+        group_final_5=$(( $group_final_5 + 1 ))
     fi
 
     # Set state_final_id to have a priority
