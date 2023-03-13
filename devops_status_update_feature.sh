@@ -138,16 +138,16 @@ if [[ ${state_final} == "" ]]; then
 fi
 
 if [[ ${state_final} == "" ]]; then
-    if [[ " ${states_1_one[*]} " =~ " $state " ]]; then
-        state_final="${states_1_one_set_status}"
-    elif [[ " ${states_2_one[*]} " =~ " $state " ]]; then
-        state_final="${states_2_one_set_status}"
-    elif [[ " ${states_3_one[*]} " =~ " $state " ]]; then
-        state_final="${states_3_one_set_status}"
-    elif [[ " ${states_4_one[*]} " =~ " $state " ]]; then
+    if [[ ${state_final_id} == 1 ]]; then
+        state_final="${states_5_one_set_status}"
+    elif [[ ${state_final_id} == 2 ]]; then
         state_final="${states_4_one_set_status}"
-    elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
-        state_final="${states_5_one_set_status}"   
+    elif [[ ${state_final_id} == 3 ]]; then
+        state_final="${states_3_one_set_status}"
+    elif [[ ${state_final_id} == 4 ]]; then
+        state_final="${states_2_one_set_status}"
+    elif [[ ${state_final_id} == 5 ]]; then
+        state_final="${states_1_one_set_status}"
     fi
     echo "one"
 fi
