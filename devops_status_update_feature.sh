@@ -111,43 +111,43 @@ done
 
 if [[ ${state_all_same} == 1 ]]; then
     if [[ " ${states_1[*]} " =~ " $state " ]]; then
-        state_final="${states_1_set_status}"
+        state_final="${states_1_all_set_status}"
     elif [[ " ${states_2[*]} " =~ " $state " ]]; then
-        state_final="${states_2_set_status}"
+        state_final="${states_2_all_set_status}"
     elif [[ " ${states_3[*]} " =~ " $state " ]]; then
-        state_final="${states_3_set_status}"
+        state_final="${states_3_all_set_status}"
     elif [[ " ${states_4[*]} " =~ " $state " ]]; then
-        state_final="${states_4_set_status}"
+        state_final="${states_4_all_set_status}"
     elif [[ " ${states_5[*]} " =~ " $state " ]]; then
-        state_final="${states_5_set_status}"  
+        state_final="${states_5_all_set_status}"  
     fi
 fi
 
 if [[ ${state_final} == "" ]]; then
     if [[ ${group_final_1} == ${total_work_item} ]]; then
-        state_final="${states_1_all_set_status}"
+        state_final="${states_1_or_set_status}"
     elif [[ ${group_final_2} == ${total_work_item} ]]; then
-        state_final="${states_2_all_set_status}"
+        state_final="${states_2_or_set_status}"
     elif [[ ${group_final_3} == ${total_work_item} ]]; then
-        state_final="${states_3_all_set_status}"
+        state_final="${states_3_or_set_status}"
     elif [[ ${group_final_4} == ${total_work_item} ]]; then
-        state_final="${states_4_all_set_status}"
+        state_final="${states_4_or_set_status}"
     elif [[ ${group_final_5} == ${total_work_item} ]]; then
-        state_final="${states_5_all_set_status}"
+        state_final="${states_5_or_set_status}"
     fi
 fi
 
 if [[ ${state_final} == "" ]]; then
-    if [[ " ${states_1_all[*]} " =~ " $state " ]]; then
-        state_final="${states_1_all_set_status}"
-    elif [[ " ${states_2_all[*]} " =~ " $state " ]]; then
-        state_final="${states_2_all_set_status}"
-    elif [[ " ${states_3_all[*]} " =~ " $state " ]]; then
-        state_final="${states_3_all_set_status}"
-    elif [[ " ${states_4_all[*]} " =~ " $state " ]]; then
-        state_final="${states_4_all_set_status}"
-    elif [[ " ${states_5_all[*]} " =~ " $state " ]]; then
-        state_final="${states_5_all_set_status}"   
+    if [[ " ${states_1_one[*]} " =~ " $state " ]]; then
+        state_final="${states_1_one_set_status}"
+    elif [[ " ${states_2_one[*]} " =~ " $state " ]]; then
+        state_final="${states_2_one_set_status}"
+    elif [[ " ${states_3_one[*]} " =~ " $state " ]]; then
+        state_final="${states_3_one_set_status}"
+    elif [[ " ${states_4_one[*]} " =~ " $state " ]]; then
+        state_final="${states_4_one_set_status}"
+    elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
+        state_final="${states_5_one_set_status}"   
     fi
 fi
 
