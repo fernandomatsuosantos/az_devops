@@ -119,6 +119,7 @@ if [[ ${state_all_same} == 1 ]]; then
     elif [[ " ${states_5[*]} " =~ " $state " ]]; then
         state_final="${states_5_all_set_status}"  
     fi
+    echo "all the same"
 fi
 
 if [[ ${state_final} == "" ]]; then
@@ -133,6 +134,7 @@ if [[ ${state_final} == "" ]]; then
     elif [[ ${group_final_5} == ${total_work_item} ]]; then
         state_final="${states_5_or_set_status}"
     fi
+    echo "or"
 fi
 
 if [[ ${state_final} == "" ]]; then
@@ -147,6 +149,7 @@ if [[ ${state_final} == "" ]]; then
     elif [[ " ${states_5_one[*]} " =~ " $state " ]]; then
         state_final="${states_5_one_set_status}"   
     fi
+    echo "one"
 fi
 
 if ! [[ -z $state ]]; then
