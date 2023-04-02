@@ -79,7 +79,7 @@ if [[ ${effort_name} != "Effort" ]]; then
 fi
 
 if [[ ${total_effort_name} != "" ]]; then
-    epic_update_4=$(az boards work-item update --id ${epic_id} --fields "Custom.${total_effort_name}=${backlog_total}|${epic_completed_effort_total}")
+    epic_update_4=$(az boards work-item update --id ${epic_id} --fields "Custom.${total_effort_name}=${backlog_total}|${backlog_total_completed}")
 fi
 
 echo "epic_effort_total: ${epic_effort_total}"
