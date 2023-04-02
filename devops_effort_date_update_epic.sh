@@ -9,6 +9,8 @@ epic_id=$1
 project_name=$2
 
 # Get all backlog itens
+backlog_total=0
+backlog_total_completed=0
 epic_effort_total=0
 epic_completed_effort_total=0
 
@@ -32,6 +34,7 @@ for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
     feature_completed_effort=$(_jq '.fields."Custom.'${completed_effort_name}'"')
     if [[ ${feature_completed_effort} =~ $re ]] ; then
         epic_completed_effort_total=$((epic_completed_effort_total+feature_completed_effort))
+        backlog_total_completed=$backlog_total_completed+1
     fi
 
     # Date
@@ -58,6 +61,7 @@ for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
         fi
     fi
 
+    backlog_total=$backlog_total+1
 done
 echo "EFFORT total: ${epic_effort_total} - completed effort total: ${epic_completed_effort_total}"
 
@@ -73,6 +77,10 @@ epic_update_2=$(az boards work-item update --id ${epic_id} --fields "Start Date=
 
 if [[ ${effort_name} != "Effort" ]]; then
     epic_update_3=$(az boards work-item update --id ${epic_id} --fields "Effort=${epic_effort_total}")
+fi
+
+if [[ ${total_effort_name} != "" ]]; then
+    epic_update_4=$(az boards work-item update --id ${epic_id} --fields "Custom.${total_effort_name}=${backlog_total}|${epic_completed_effort_total}")
 fi
 
 echo "epic_effort_total: ${epic_effort_total}"
