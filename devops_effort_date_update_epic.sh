@@ -29,6 +29,7 @@ for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
     feature_effort=$(_jq '.fields."Microsoft.VSTS.Scheduling.'${effort_name}'"')
     if [[ ${feature_effort} =~ $re ]] ; then
         epic_effort_total=$((epic_effort_total+feature_effort))
+        backlog_total=$((backlog_total+1))
     fi
 
     feature_completed_effort=$(_jq '.fields."Custom.'${completed_effort_name}'"')
@@ -60,8 +61,6 @@ for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
             epic_max_finish_date=${feature_target_date}
         fi
     fi
-
-    backlog_total=$((backlog_total+1))
 done
 echo "EFFORT total: ${epic_effort_total} - completed effort total: ${epic_completed_effort_total}"
 

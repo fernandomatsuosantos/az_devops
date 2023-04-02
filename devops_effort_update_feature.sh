@@ -23,6 +23,7 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
     backlog_effort=$(_jq '.fields."Microsoft.VSTS.Scheduling.'${effort_name}'"')
     if [[ ${backlog_effort} =~ $re ]] ; then
         backlog_effort_total=$((backlog_effort_total+backlog_effort))
+        backlog_total=$((backlog_total+1))
     fi
     backlog_sytem_state=$(_jq '.fields."System.State"')
     if [ "$backlog_sytem_state" == "${state_done_name}" ]; then
@@ -30,8 +31,6 @@ for row_backlog in $(echo "${backlogs}" | jq -r '.[] | @base64'); do
         backlog_total_completed=$((backlog_total_completed+1))
     fi
     echo "BACKLOG:  ${backlog_id} - EFFORT: ${backlog_effort} - STATE: ${backlog_sytem_state}"
-
-    backlog_total=$((backlog_total+1))
 done
 echo "total": ${backlog_effort_total}
 
