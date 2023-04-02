@@ -19,7 +19,7 @@ echo "project_name: ${project_name}"
 
 re='^[0-9]+$'
 
-features=$(az boards query --wiql "SELECT Microsoft.VSTS.Scheduling.${effort_name}, Custom.${completed_effort_name}, Microsoft.VSTS.Scheduling.StartDate, Microsoft.VSTS.Scheduling.TargetDate FROM workitems where [System.TeamProject] = '${project_name}' and [System.Parent] = '${epic_id}' and [System.WorkItemType] = '${feature_name}'")
+features=$(az boards query --wiql "SELECT System.State, Microsoft.VSTS.Scheduling.${effort_name}, Custom.${completed_effort_name}, Microsoft.VSTS.Scheduling.StartDate, Microsoft.VSTS.Scheduling.TargetDate FROM workitems where [System.TeamProject] = '${project_name}' and [System.Parent] = '${epic_id}' and [System.WorkItemType] = '${feature_name}'")
 for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
     _jq() {
     echo ${row_feature} | base64 --decode | jq -r ${1}
@@ -35,6 +35,10 @@ for row_feature in $(echo "${features}" | jq -r '.[] | @base64'); do
     feature_completed_effort=$(_jq '.fields."Custom.'${completed_effort_name}'"')
     if [[ ${feature_completed_effort} =~ $re ]] ; then
         epic_completed_effort_total=$((epic_completed_effort_total+feature_completed_effort))
+    fi
+
+    backlog_sytem_state=$(_jq '.fields."System.State"')
+    if [ "$backlog_sytem_state" == "${state_done_name}" ]; then
         backlog_total_completed=$((backlog_total_completed+1))
     fi
 
