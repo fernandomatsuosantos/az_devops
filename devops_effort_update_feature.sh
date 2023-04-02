@@ -43,6 +43,10 @@ else
     feature_update=$(az boards work-item update --id ${feature_id} --fields "Effort=${backlog_effort_total}" "Custom.${completed_effort_name}=${backlog_completed_effort_total}" "Custom.${percentage_completed_effort_name}=${percentage_effort_total}")
 fi
 
+if [[ ${total_effort_name} != "" ]]; then
+    feature_update=$(az boards work-item update --id ${feature_id} --fields "Custom.${total_effort_name}=${backlog_effort_total}|${backlog_completed_effort_total}")
+fi
+
 echo "backlog_effort_total: ${backlog_effort_total}"
 echo "backlog_completed_effort_total: ${backlog_completed_effort_total}"
 
