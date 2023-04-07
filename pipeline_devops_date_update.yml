@@ -16,20 +16,8 @@ steps:
    workingDirectory: '$(System.DefaultWorkingDirectory)/'
    targetType: 'inline'
    script: |
+    export AZURE_DEVOPS_EXT_PAT=$(AZURE_DEVOPS_EXT_PAT)
     printenv
-    # Check if requirements are installed
-    if [ $(dpkg-query -W -f='${Status}' jq 2>/dev/null | grep -c "ok installed") -eq 0 ];
-      image_ok=1
-    then
-      image_ok=0
-      echo "Missing jq"
-    fi
-    if [ $(dpkg-query -W -f='${Status}' az 2>/dev/null | grep -c "ok installed") -eq 0 ];
-      image_ok=1
-    then
-      image_ok=0
-      echo "Missing az client"
-    fi
     # Remove special characteres from JSON
     escape_data() {
       local data=$1
@@ -40,12 +28,19 @@ steps:
     }
     JsonPost=$(escape_data $'${{ convertToJson(parameters.trigger_date) }}')
     # Create JSON file to be used by bash
-    echo ${JsonPost} > JsonPost.json
-    cat JsonPost.json
+    echo ${JsonPost} > $(System.DefaultWorkingDirectory)/JsonPost.json
+    cat $(System.DefaultWorkingDirectory)/JsonPost.json
+    # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
+    if [ AGENT_NAME != "Hosted Agent" ];
+      echo "Running on Microsoft Hosted Agent"
+      $(System.DefaultWorkingDirectory)/devops_date_update.sh
+    then
+      echo "Running on Self-Hosted Agent"
+    fi
 
-- task: Bash@3
-  inputs:
-    workingDirectory: '$(System.DefaultWorkingDirectory)/'
-    filePath: devops_date_update.sh
-  env:
-    AZURE_DEVOPS_EXT_PAT: $(AZURE_DEVOPS_EXT_PAT)
+# - task: Bash@3
+#   inputs:
+#     workingDirectory: '$(System.DefaultWorkingDirectory)/'
+#     filePath: devops_date_update.sh
+#   env:
+#     AZURE_DEVOPS_EXT_PAT: $(AZURE_DEVOPS_EXT_PAT)
