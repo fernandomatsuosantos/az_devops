@@ -17,6 +17,7 @@ steps:
    targetType: 'inline'
    script: |
     export AZURE_DEVOPS_EXT_PAT=$(AZURE_DEVOPS_EXT_PAT)
+    run_script="devops_date_update.sh"
     #---------------------
     # Remove special characteres from JSON
     #---------------------    
@@ -29,29 +30,22 @@ steps:
     }
     JsonPost=$(escape_data $'${{ convertToJson(parameters.trigger_date) }}')
     # Create JSON file to be used by bash
-    echo ${JsonPost} > $(System.DefaultWorkingDirectory)/JsonPost.json
-    cat $(System.DefaultWorkingDirectory)/JsonPost.json
+    echo ${JsonPost} > JsonPost.json
+    cat JsonPost.json
     #---------------------
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
     #---------------------
     # if [ AGENT_NAME != "Hosted Agent" ]; then
     #   echo "Running on Microsoft Hosted Agent"
-    #   chmod +x $(System.DefaultWorkingDirectory)/devops_date_update.sh
-    #   $(System.DefaultWorkingDirectory)/devops_date_update.sh
+    #   chmod +x devops_date_update.sh
+    #   devops_date_update.sh
     # else
       echo "Running on Self-Hosted Agent"
       if [ $(dpkg-query -W -f='${Status}' docker 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
         echo "Docker is installed"
         docker --version
-        docker run -v "$(System.DefaultWorkingDirectory):/home/circleci/project" cimg/azure:2023.04.1 /bin/bash -c "az config set extension.use_dynamic_install=yes_without_prompt; chmod +x /home/circleci/project/devops_date_update.sh; /home/circleci/project/devops_date_update.sh"
+        docker run -v "$(System.DefaultWorkingDirectory):/home/circleci/project" cimg/azure:2023.04.1 /bin/bash -c "az config set extension.use_dynamic_install=yes_without_prompt; chmod +x /home/circleci/project/${run_script}; /home/circleci/project/${run_script}"
       else
         echo "You must install docker on Self-Hosted Agent"
       fi
     # fi
-
-# - task: Bash@3
-#   inputs:
-#     workingDirectory: '$(System.DefaultWorkingDirectory)/'
-#     filePath: devops_date_update.sh
-#   env:
-#     AZURE_DEVOPS_EXT_PAT: $(AZURE_DEVOPS_EXT_PAT)
