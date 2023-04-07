@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source env.list
+
 az devops configure --defaults "organization=$ORGANIZATION"
 
 # Azure Library converts variables to uppercase

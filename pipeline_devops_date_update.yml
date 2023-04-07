@@ -45,7 +45,7 @@ steps:
         echo "Docker is installed"
         docker --version
         printenv > env.list
-        docker run --env-file env.list -v "$(System.DefaultWorkingDirectory):/home/circleci/project" cimg/azure:2023.04.1 /bin/bash -c "az config set extension.use_dynamic_install=yes_without_prompt; chmod +x /home/circleci/project/${run_script}; /home/circleci/project/${run_script}"
+        docker run -v "$(System.DefaultWorkingDirectory):/home/circleci/project" cimg/azure:2023.04.1 /bin/bash -c "az config set extension.use_dynamic_install=yes_without_prompt; chmod +x /home/circleci/project/${run_script}; /home/circleci/project/${run_script}"
       else
         echo "You must install docker on Self-Hosted Agent"
       fi
