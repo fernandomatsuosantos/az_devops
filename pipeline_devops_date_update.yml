@@ -43,7 +43,7 @@ steps:
       if [ $(dpkg-query -W -f='${Status}' docker 2>/dev/null | grep -c "ok installed") -eq 0 ]; then
         echo "Docker installed"
         docker --version
-        docker run cimg/azure:2023.04.1"
+        docker run cimg/azure:2023.04.1
       else
         echo "You must install docker on Self-Hosted Agent"
       fi
