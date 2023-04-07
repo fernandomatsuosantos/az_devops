@@ -33,6 +33,7 @@ steps:
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
     if [ AGENT_NAME != "Hosted Agent" ];
       echo "Running on Microsoft Hosted Agent"
+      chmod +x $(System.DefaultWorkingDirectory)/devops_date_update.sh
       $(System.DefaultWorkingDirectory)/devops_date_update.sh
     then
       echo "Running on Self-Hosted Agent"
