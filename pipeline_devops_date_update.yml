@@ -18,7 +18,9 @@ steps:
    script: |
     export AZURE_DEVOPS_EXT_PAT=$(AZURE_DEVOPS_EXT_PAT)
     printenv
+    #---------------------
     # Remove special characteres from JSON
+    #---------------------    
     escape_data() {
       local data=$1
       data="${data//$'\n'/''}"
@@ -30,14 +32,22 @@ steps:
     # Create JSON file to be used by bash
     echo ${JsonPost} > $(System.DefaultWorkingDirectory)/JsonPost.json
     cat $(System.DefaultWorkingDirectory)/JsonPost.json
+    #---------------------
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
-    if [ AGENT_NAME != "Hosted Agent" ];
-      echo "Running on Microsoft Hosted Agent"
-      chmod +x $(System.DefaultWorkingDirectory)/devops_date_update.sh
-      $(System.DefaultWorkingDirectory)/devops_date_update.sh
-    then
+    #---------------------
+    # if [ AGENT_NAME != "Hosted Agent" ];
+    #   echo "Running on Microsoft Hosted Agent"
+    #   chmod +x $(System.DefaultWorkingDirectory)/devops_date_update.sh
+    #   $(System.DefaultWorkingDirectory)/devops_date_update.sh
+    # else
       echo "Running on Self-Hosted Agent"
-    fi
+      if [ $(dpkg-query -W -f='${Status}' docker 2>/dev/null | grep -c "ok installed") -eq 0 ];
+        echo "Docker installed"
+        docker --version
+      else
+        echo "You must install docker on Self-Hosted Agent"
+      fi
+    # fi
 
 # - task: Bash@3
 #   inputs:
