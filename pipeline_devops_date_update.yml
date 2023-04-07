@@ -16,10 +16,19 @@ steps:
    workingDirectory: '$(System.DefaultWorkingDirectory)/'
    targetType: 'inline'
    script: |
-    # Install jq if necessary
-    if [ $(sudo dpkg-query -W -f='${Status}' jq 2>/dev/null | grep -c "ok installed") -eq 0 ];
+    printenv
+    # Check if requirements are installed
+    if [ $(dpkg-query -W -f='${Status}' jq 2>/dev/null | grep -c "ok installed") -eq 0 ];
+      image_ok=1
     then
-      sudo apt-get install -y jq;
+      image_ok=0
+      echo "Missing jq"
+    fi
+    if [ $(dpkg-query -W -f='${Status}' az 2>/dev/null | grep -c "ok installed") -eq 0 ];
+      image_ok=1
+    then
+      image_ok=0
+      echo "Missing az client"
     fi
     # Remove special characteres from JSON
     escape_data() {
