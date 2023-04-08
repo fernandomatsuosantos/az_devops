@@ -21,16 +21,10 @@ steps:
     #---------------------
     # Remove special characteres from JSON
     #---------------------    
-    escape_data() {
-      local data=$1
-      data="${data//$'\n'/''}"
-      data="${data//$'\r'/''}"
-      data="${data//\\//}"
-      echo "$data"
-    }
-    JsonPost=$(escape_data $'${{ convertToJson(parameters.trigger_date) }}')
-    # Create JSON file to be used by bash
-    echo ${JsonPost} > JsonPost.json
+    echo '${{ convertToJson(parameters.trigger_devops) }}' > JsonPost.json
+    tr -d '\n' < JsonPost.json
+    tr -d '\r' < JsonPost.json
+    tr -d '\\' < JsonPost.json
     cat JsonPost.json
     #---------------------
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
