@@ -21,7 +21,7 @@ steps:
     #---------------------
     # Remove special characteres from JSON
     #---------------------    
-    echo '${{ convertToJson(parameters.trigger_devops) }}' > JsonPost.json
+    echo '${{ convertToJson(parameters.trigger_date) }}' > JsonPost.json
     tr -d '\n' < JsonPost.json
     tr -d '\r' < JsonPost.json
     tr -d '\\' < JsonPost.json
