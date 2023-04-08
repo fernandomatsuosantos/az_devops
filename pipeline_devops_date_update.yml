@@ -37,8 +37,8 @@ steps:
     #---------------------
     # if [ AGENT_NAME != "Hosted Agent" ]; then
     #   echo "Running on Microsoft Hosted Agent"
-    #   chmod +x devops_date_update.sh
-    #   ./devops_date_update.sh
+    #   chmod +x ${run_script}
+    #   ./${run_script}
     # else
       echo "Running on Self-Hosted Agent"
       if [ $(dpkg-query -W -f='${Status}' docker 2>/dev/null | grep -c "ok installed") -eq 0 ]; then

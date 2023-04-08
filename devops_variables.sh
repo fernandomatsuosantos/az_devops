@@ -18,7 +18,7 @@ echo "TOTAL_EFFORT_NAME=$TOTAL_EFFORT_NAME" >> env.list
 echo "TIME_ZONE=$TIME_ZONE" >> env.list
 echo "STATES_ENABLED=$STATES_ENABLED" >> env.list
 echo "STATES=$STATES" >> env.list
-cat env.list 
+#cat env.list 
 
 # Azure Library converts variables to uppercase
 
