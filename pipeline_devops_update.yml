@@ -30,7 +30,7 @@ steps:
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
     #---------------------
     echo $AGENT_NAME
-    if [ $AGENT_NAME == "Hosted Agent" ]; then
+    if [ $AGENT_NAME = "Hosted Agent" ]; then
       echo "Running on Microsoft Hosted Agent"
       chmod +x *.sh
       ./${run_script}
