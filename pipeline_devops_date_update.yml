@@ -21,9 +21,10 @@ steps:
     #---------------------
     # Remove special characteres from JSON
     #---------------------    
-    echo '${{ convertToJson(parameters.trigger_date) }}' > JsonPost.json
-    tr -d '\n\r' < JsonPost.json
-    tr '\\' '//' < JsonPost.json
+    echo '${{ convertToJson(parameters.trigger_date) }}' > JsonPost_0.json
+    tr -d '\n\r' < JsonPost_0.json > JsonPost_1.json
+    tr '\\' '//' < JsonPost_1.json > JsonPost_2.json
+    cat JsonPost_2.json > JsonPost.json
     cat JsonPost.json
     #---------------------
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
