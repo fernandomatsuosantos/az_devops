@@ -16,6 +16,7 @@ steps:
    workingDirectory: '$(System.DefaultWorkingDirectory)/'
    targetType: 'inline'
    script: |
+    export AZURE_DEVOPS_EXT_PAT=$(AZURE_DEVOPS_EXT_PAT)
     run_script="devops_date_update.sh"
     #---------------------
     # Remove special characteres from JSON
