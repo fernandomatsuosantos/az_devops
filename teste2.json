@@ -1,0 +1,146 @@
+{
+    "subscriptionId": "dd4cfabd-62c8-407b-bcd2-887aa1351502",
+    "notificationId": 59,
+    "id": "16d3347f-ff23-448c-b518-3f9f3a41bf59",
+    "eventType": "workitem.updated",
+    "publisherId": "tfs",
+    "message": {
+        "text": "Product Backlog Item #52 (item A1) updated by Fernando Santos/r/n(https://dev.azure.com/fernandomatsuosantos/web/wi.aspx?pcguid=1ecaca29-7bd7-4627-8ff5-620d93724633&id=52)"
+    },
+    "detailedMessage": {
+        "text": "Product Backlog Item #52 (item A1) updated by Fernando Santos/r/n(https://dev.azure.com/fernandomatsuosantos/web/wi.aspx?pcguid=1ecaca29-7bd7-4627-8ff5-620d93724633&id=52)/r/n/r/n- New Iteration: DevOps PoC//Q 23.1//Sprint 23.1.3/r/n"
+    },
+    "resource": {
+        "id": 44,
+        "workItemId": 52,
+        "rev": 44,
+        "revisedBy": {
+            "id": "0b3552e4-1fc7-45b7-bc2a-cf6fcd2f3446",
+            "name": "Fernando Santos <fernando@familiamatsuo.com>",
+            "displayName": "Fernando Santos",
+            "url": "https://spsprodsbr1.vssps.visualstudio.com/Ae3bf84ec-7a11-4883-b796-e1892c8d1a16/_apis/Identities/0b3552e4-1fc7-45b7-bc2a-cf6fcd2f3446",
+            "_links": {
+                "avatar": {
+                    "href": "https://dev.azure.com/fernandomatsuosantos/_apis/GraphProfile/MemberAvatars/msa.MTQ2ODA0ODktY2I2ZS03MDJkLThhYTYtYWRkYzUxODA0MmU3"
+                }
+            },
+            "uniqueName": "fernando@familiamatsuo.com",
+            "imageUrl": "https://dev.azure.com/fernandomatsuosantos/_apis/GraphProfile/MemberAvatars/msa.MTQ2ODA0ODktY2I2ZS03MDJkLThhYTYtYWRkYzUxODA0MmU3",
+            "descriptor": "msa.MTQ2ODA0ODktY2I2ZS03MDJkLThhYTYtYWRkYzUxODA0MmU3"
+        },
+        "revisedDate": "9999-01-01 00:00:00+00:00",
+        "fields": {
+            "System.Rev": {
+                "oldValue": 43,
+                "newValue": 44
+            },
+            "System.AuthorizedDate": {
+                "oldValue": "2023-04-08 15:02:57+00:00",
+                "newValue": "2023-04-08 15:03:27+00:00"
+            },
+            "System.RevisedDate": {
+                "oldValue": "2023-04-08 15:03:27+00:00",
+                "newValue": "9999-01-01 00:00:00+00:00"
+            },
+            "System.IterationId": {
+                "oldValue": 26,
+                "newValue": 35
+            },
+            "System.IterationPath": {
+                "oldValue": "DevOps PoC//Q 23.1",
+                "newValue": "DevOps PoC//Q 23.1//Sprint 23.1.3"
+            },
+            "System.IterationLevel3": {
+                "newValue": "Sprint 23.1.3"
+            },
+            "System.ChangedDate": {
+                "oldValue": "2023-04-08 15:02:57+00:00",
+                "newValue": "2023-04-08 15:03:27+00:00"
+            },
+            "System.Watermark": {
+                "oldValue": 1041,
+                "newValue": 1042
+            }
+        },
+        "_links": {
+            "self": {
+                "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/updates/44"
+            },
+            "workItemUpdates": {
+                "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/updates"
+            },
+            "parent": {
+                "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52"
+            },
+            "html": {
+                "href": "https://dev.azure.com/fernandomatsuosantos/web/wi.aspx?pcguid=1ecaca29-7bd7-4627-8ff5-620d93724633&id=52"
+            }
+        },
+        "url": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/updates/44",
+        "revision": {
+            "id": 52,
+            "rev": 44,
+            "fields": {
+                "System.AreaPath": "DevOps PoC//Program//Team",
+                "System.TeamProject": "DevOps PoC",
+                "System.IterationPath": "DevOps PoC//Q 23.1//Sprint 23.1.3",
+                "System.WorkItemType": "Product Backlog Item",
+                "System.State": "Team Backlog",
+                "System.Reason": "Moved to state Team Backlog",
+                "System.CreatedDate": "2023-01-30 07:02:27+00:00",
+                "System.CreatedBy": "joel onuki <joelonuki@hotmail.com>",
+                "System.ChangedDate": "2023-04-08 15:03:27+00:00",
+                "System.ChangedBy": "Fernando Santos <fernando@familiamatsuo.com>",
+                "System.CommentCount": 0,
+                "System.Title": "item A1",
+                "Microsoft.VSTS.Common.StateChangeDate": "2023-03-15 21:38:55+00:00",
+                "Microsoft.VSTS.Common.Priority": 2,
+                "Microsoft.VSTS.Common.ValueArea": "Business",
+                "Microsoft.VSTS.Scheduling.Effort": 1,
+                "Microsoft.VSTS.Common.BacklogPriority": 1999966459,
+                "WEF_BBADB5EC91584056AA7168C65FF26BAB_Kanban.Column": "Done",
+                "WEF_BBADB5EC91584056AA7168C65FF26BAB_Kanban.Column.Done": false,
+                "Custom.ParentId": 51,
+                "System.Parent": 51
+            },
+            "relations": [
+                {
+                    "rel": "System.LinkTypes.Hierarchy-Reverse",
+                    "url": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/51",
+                    "attributes": {
+                        "isLocked": false,
+                        "name": "Parent"
+                    }
+                }
+            ],
+            "_links": {
+                "self": {
+                    "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/revisions/44"
+                },
+                "workItemRevisions": {
+                    "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/revisions"
+                },
+                "parent": {
+                    "href": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52"
+                }
+            },
+            "url": "https://dev.azure.com/fernandomatsuosantos/947e6c00-40b5-47ed-8325-8dd36a6029dc/_apis/wit/workItems/52/revisions/44"
+        }
+    },
+    "resourceVersion": "1.0",
+    "resourceContainers": {
+        "collection": {
+            "id": "1ecaca29-7bd7-4627-8ff5-620d93724633",
+            "baseUrl": "https://dev.azure.com/fernandomatsuosantos/"
+        },
+        "account": {
+            "id": "e3bf84ec-7a11-4883-b796-e1892c8d1a16",
+            "baseUrl": "https://dev.azure.com/fernandomatsuosantos/"
+        },
+        "project": {
+            "id": "947e6c00-40b5-47ed-8325-8dd36a6029dc",
+            "baseUrl": "https://dev.azure.com/fernandomatsuosantos/"
+        }
+    },
+    "createdDate": "2023-04-08 15:03:33+00:00"
+}

@@ -24,7 +24,7 @@ steps:
     echo '${{ convertToJson(parameters.trigger_date) }}' > JsonPost.json
     tr -d '\n' < JsonPost.json
     tr -d '\r' < JsonPost.json
-    tr -d '\\' < JsonPost.json
+    tr '\\' '//' < JsonPost.json
     cat JsonPost.json
     #---------------------
     # Check if it's running on Microsoft Hosted Agent or Self-Hosted Agent
