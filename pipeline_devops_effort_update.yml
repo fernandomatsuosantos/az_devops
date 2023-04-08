@@ -28,7 +28,7 @@ steps:
       data="${data//\\//}"
       echo "$data"
     }
-    JsonPost=$(escape_data $'${{ convertToJson(parameters.trigger_date) }}')
+    JsonPost=$(escape_data $'${{ convertToJson(parameters.trigger_effort) }}')
     # Create JSON file to be used by bash
     echo ${JsonPost} > JsonPost.json
     cat JsonPost.json
