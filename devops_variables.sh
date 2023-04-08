@@ -17,7 +17,7 @@ if [[ "$create_env_file" == "1" ]]; then
     echo "TIME_ZONE=$TIME_ZONE" >> env.list
     echo "STATES_ENABLED=$STATES_ENABLED" >> env.list
     echo "STATES=$STATES" >> env.list
-    cat env.list
+    #cat env.list
 else
     az devops configure --defaults "organization=$ORGANIZATION"
 fi
