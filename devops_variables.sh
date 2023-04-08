@@ -1,8 +1,22 @@
 #!/bin/bash
 
-source env.list
-
 az devops configure --defaults "organization=$ORGANIZATION"
+
+# Copy variables to file - to run the pipeline on docker
+
+echo "ORGANIZATION=$ORGANIZATION" >> env.list
+echo "BACKLOG_ITEM_NAME=$BACKLOG_ITEM_NAME" >> env.list
+echo "FEATURE_NAME=$FEATURE_NAME" >> env.list
+echo "EPIC_NAME=$EPIC_NAME" >> env.list
+echo "STATE_DONE_NAME=$STATE_DONE_NAME" >> env.list
+echo "EFFORT_NAME=$EFFORT_NAME" >> env.list
+echo "PARENT_ID_NAME=$PARENT_ID_NAME" >> env.list
+echo "COMPLETED_EFFORT_NAME=$COMPLETED_EFFORT_NAME" >> env.list
+echo "PERCENTAGE_COMPLETED_EFFORT_NAME=$PERCENTAGE_COMPLETED_EFFORT_NAME" >> env.list
+echo "TOTAL_EFFORT_NAME=$TOTAL_EFFORT_NAME" >> env.list
+echo "TIME_ZONE=$TIME_ZONE" >> env.list
+echo "STATES_ENABLED=$STATES_ENABLED" >> env.list
+echo "STATES=$STATES" >> env.list
 
 # Azure Library converts variables to uppercase
 
@@ -16,7 +30,6 @@ completed_effort_name="$COMPLETED_EFFORT_NAME"
 percentage_completed_effort_name="$PERCENTAGE_COMPLETED_EFFORT_NAME"
 total_effort_name="$TOTAL_EFFORT_NAME"
 time_zone="$TIME_ZONE"
-
 states_enabled="$STATES_ENABLED"
 states="$STATES"
 
