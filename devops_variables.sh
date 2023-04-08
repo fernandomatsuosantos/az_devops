@@ -4,7 +4,8 @@ az devops configure --defaults "organization=$ORGANIZATION"
 
 # Copy variables to file - to run the pipeline on docker
 
-echo "ORGANIZATION=$ORGANIZATION" > env.list
+echo "AZURE_DEVOPS_EXT_PAT=$AZURE_DEVOPS_EXT_PAT" > env.list
+echo "ORGANIZATION=$ORGANIZATION" >> env.list
 echo "BACKLOG_ITEM_NAME=$BACKLOG_ITEM_NAME" >> env.list
 echo "FEATURE_NAME=$FEATURE_NAME" >> env.list
 echo "EPIC_NAME=$EPIC_NAME" >> env.list
